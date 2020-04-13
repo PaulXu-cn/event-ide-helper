@@ -1,0 +1,17 @@
+{
+    "name": "paulxu-cn/event-ide-helper",
+    "description": "PHP ext-Event IDE Helper",
+    "type": "library",
+    "license": "GPL 3.0",
+    "authors": [
+        {
+            "name": "Paul Xu",
+            "email": "dianzikdcdmain@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "classmap": ["src/"]
+    },
+    "require": {}
+}
