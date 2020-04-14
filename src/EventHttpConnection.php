@@ -23,7 +23,8 @@ class EventHttpConnection {
     /**
      * Returns event base associated with the connection.
      *
-     * @return EventBase On success returns EventBase object associated with the connection. Otherwise FALSE.
+     * @return EventBase On success returns EventBase object associated with the
+     *                   connection. Otherwise FALSE.
      */
     public function getBase () {}
 

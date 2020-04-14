@@ -1,20 +1,17 @@
 <?php
 
 /**
+ * Class EventBufferEvent
  * Represents Libevent's buffer event.
  * Usually an application wants to perform some amount of data buffering in
  * addition to just responding to events. When we want to write data,
  * for example, the usual pattern looks like:
- *
- * Decide that we want to write some data to a connection; put that data in a buffer.
- *
+ * Decide that we want to write some data to a connection; put that data in a
+ * buffer.
  * Wait for the connection to become writable
- *
  * Write as much of the data as we can
- *
  * Remember how much we wrote, and if we still have more data to write,
  * wait for the connection to become writable again.
- *
  * This buffered I/O pattern is common enough that Libevent provides a generic
  * mechanism for it. A "buffer event" consists of an underlying transport
  * (like a socket), a read buffer, and a write buffer. Instead of
@@ -22,8 +19,6 @@
  * to be read or written, a buffer event invokes its user-supplied callbacks
  * when it has read or written enough data.
  * @link https://www.php.net/manual/en/class.eventbufferevent.php
- *
- * Class EventBufferEvent
  */
 final class EventBufferEvent {
 
@@ -245,7 +240,10 @@ final class EventBufferEvent {
     public function __construct ( EventBase $base , mixed $socket = NULL , int $options = 0 , callable $readcb = NULL , callable $writecb = NULL , callable $eventcb = NULL  ) {}
 
     /**
-     * Returns array of two EventBufferEvent objects connected to each other. All the usual options are supported, except for EventBufferEvent::OPT_CLOSE_ON_FREE , which has no effect, and EventBufferEvent::OPT_DEFER_CALLBACKS , which is always on.
+     * Returns array of two EventBufferEvent objects connected to each other.
+     * All the usual options are supported, except for
+     * EventBufferEvent::OPT_CLOSE_ON_FREE , which has no effect, and
+     * EventBufferEvent::OPT_DEFER_CALLBACKS , which is always on.
      *
      * @link https://www.php.net/manual/en/eventbufferevent.createpair.php
      *
@@ -269,7 +267,9 @@ final class EventBufferEvent {
     public function disable ( int $events ) {}
 
     /**
-     * Enable events Event::READ , Event::WRITE , or Event::READ | Event::WRITE on a buffer event.
+     * Enable events Event::READ , Event::WRITE , or Event::READ | Event::WRITE
+     * on a buffer event.
+     *
      * @link https://www.php.net/manual/en/eventbufferevent.enable.php
      *
      * @param int $events Event::READ , Event::WRITE , or Event::READ |
@@ -423,10 +423,12 @@ final class EventBufferEvent {
      * Create a new SSL buffer event to send its data over another buffer event
      * Note:
      * This function is available only if Event is compiled with OpenSSL support.
+     *
      * @link https://www.php.net/manual/en/eventbufferevent.sslfilter.php
      *
      * @param EventBase        $base    Associated event base.
-     * @param EventBufferEvent $underlying A socket buffer event to use for this SSL.
+     * @param EventBufferEvent $underlying A socket buffer event to use for
+     *                                      this SSL.
      * @param EventSslContext  $ctx Object of EventSslContext class.
      * @param int $state The current state of SSL connection:
      *                   EventBufferEvent::SSL_OPEN ,
@@ -444,16 +446,18 @@ final class EventBufferEvent {
      * man page).
      * Note:
      * This function is available only if Event is compiled with OpenSSL support.
+     *
      * @link https://www.php.net/manual/en/eventbufferevent.sslgetcipherinfo.php
      *
-     * @return string Returns a textual description of the cipher on success, or FALSE on error.
+     * @return string Returns a textual description of the cipher on success,
+     *                or FALSE on error.
      */
     public function sslGetCipherInfo () {}
 
     /**
      * Retrieves name of cipher used by current SSL connection.
-     * Note:
-     * This function is available only if Event is compiled with OpenSSL support.
+     * Note: This function is available only if Event is compiled with OpenSSL
+     * support.
      *
      * @link https://www.php.net/manual/en/eventbufferevent.sslgetciphername.php
      *
@@ -465,20 +469,24 @@ final class EventBufferEvent {
     /**
      * Retrieves version of cipher used by current SSL connection.
      * Note:
-     * This function is available only if Event is compiled with OpenSSL support.
+     * This function is available only if Event is compiled with OpenSSL support
+     *
      * @link https://www.php.net/manual/en/eventbufferevent.sslgetcipherversion.php
      *
-     * @return string Returns the current cipher version of the SSL connection, or FALSE on error.
+     * @return string Returns the current cipher version of the SSL connection,
+     *                or FALSE on error.
      */
     public function sslGetCipherVersion () {}
 
     /**
      * Returns the name of the protocol used for current SSL connection.
      * Note:
-     * This function is available only if Event is compiled with OpenSSL support.
+     * This function is available only if Event is compiled with OpenSSL support
+     *
      * @link https://www.php.net/manual/en/eventbufferevent.sslgetprotocol.php
      *
-     * @return string Returns the name of the protocol used for current SSL connection.
+     * @return string Returns the name of the protocol used for current SSL
+     *                connection.
      */
     public function sslGetProtocol () {}
 

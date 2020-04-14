@@ -39,7 +39,7 @@ final class EventHttp {
      * different ports.
      * @link https://www.php.net/manual/en/eventhttp.bind.php
      *
-     * @param string $address A string containing the IP address to listen(2) on.
+     * @param string $address A string containing the IP address to listen(2) on
      * @param int    $port The port number to listen on.
      */
     public function bind ( string $address , int $port ) {}

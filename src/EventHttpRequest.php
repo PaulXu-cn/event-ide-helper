@@ -267,7 +267,7 @@ class EventHttpRequest {
      * @link https://www.php.net/manual/en/eventhttprequest.sendreply.php
      *
      * @param int         $code The HTTP response code to send.
-     * @param string      $reason A brief message to send with the response code.
+     * @param string      $reason A brief message to send with the response code
      * @param EventBuffer $buf The body of the response.
      */
     public function sendReply ( int $code , string $reason , EventBuffer $buf ) {}

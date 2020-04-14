@@ -36,9 +36,11 @@ final class EventConfig {
     /**
      * Tells libevent to avoid specific event method(backend). See » Creating
      * an event base .
+     *
      * @link https://www.php.net/manual/en/eventconfig.avoidmethod.php
      *
-     * @param string    $method The backend method to avoid. See EventConfig constants .
+     * @param string $method The backend method to avoid. See EventConfig
+     *                       constants .
      */
     public function avoidMethod ( string $method ) {}
 
