@@ -34,9 +34,9 @@ final EventBase {
     const EPOLL_USE_CHANGELIST = 16 ;
     /* Methods */
     public function __construct ([ EventConfig $cfg ] )
-    public function dispatch ( void ) : void
+    public function dispatch ( void ) {}
     public function exit ([ float $timeout ] ) : bool
-    public function free ( void ) : void
+    public function free ( void ) {}
     public function getFeatures ( void ) : int
     public function getMethod ( void ) : string
     public function getTimeOfDayCached ( void ) : float

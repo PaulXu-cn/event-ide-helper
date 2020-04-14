@@ -1,8 +1,14 @@
 <?php
 
+/**
+ * Class EventDnsBase
+ * Represents Libevent's DNS base structure. Used to resolve DNS asyncronously,
+ * parse configuration files like resolv.conf etc.
+ * @link https://www.php.net/manual/en/class.eventdnsbase.php
+ */
 final class EventDnsBase {
+    
     /* Constants */
-
     /**
      * @var integer
      */
@@ -29,8 +35,8 @@ final class EventDnsBase {
     const OPTIONS_ALL = 15 ;
     /* Methods */
     public function addNameserverIp ( string $ip ) : bool
-    public function addSearch ( string $domain ) : void
-    public function clearSearch ( void ) : void
+    public function addSearch ( string $domain ) {}
+    public function clearSearch ( void ) {}
     public function __construct ( EventBase $base , bool $initialize )
     public function countNameservers ( void ) : int
     public function loadHosts ( string $hosts ) : bool

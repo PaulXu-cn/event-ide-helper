@@ -91,19 +91,61 @@ final class Event {
     public function addSignal ($timeout) {}
 
     /**
-     *
+     * @param float|NULL $timeout [optional]
+     * @return bool
      */
-    public function addTimer ([ float $timeout ] ) : bool
-    public function __construct ( EventBase $base , mixed $fd , int $what , callable $cb [, mixed $arg = NULL ] )
+    public function addTimer (float $timeout = NULL ) : bool
+
+    /**
+     * Event constructor.
+     *
+     * @param EventBase  $base
+     * @param mixed      $fd
+     * @param int        $what
+     * @param callable   $cb
+     * @param mixed|NULL $arg [optional]
+     */
+    public function __construct ( EventBase $base , mixed $fd , int $what , callable $cb , mixed $arg = NULL )
     public function del ( void ) : bool
     public function delSignal ( void ) : bool
     public function delTimer ( void ) : bool
     public function free ( void ) : void
     public function static getSupportedMethods ( void ) : array
     public function pending ( int $flags ) : bool
-    public function set ( EventBase $base , mixed $fd [, int $what [, callable $cb [, mixed $arg ]]] ) : bool
+
+    /**
+     * @param EventBase     $base
+     * @param mixed         $fd
+     * @param int|NULL      $what [optional]
+     * @param callable|NULL $cb [optional]
+     * @param mixed|NULL    $arg [optional]
+     * @return bool
+     */
+    public function set ( EventBase $base , mixed $fd , int $what = NULL , callable $cb = NULL , mixed $arg = NULL ) : bool
     public function setPriority ( int $priority ) : bool
-    public function setTimer ( EventBase $base , callable $cb [, mixed $arg ] ) : bool
-    public function static signal ( EventBase $base , int $signum , callable $cb [, mixed $arg ] ) : Event
-    public function static timer ( EventBase $base , callable $cb [, mixed $arg ] ) : Event
+
+    /**
+     * @param EventBase  $base
+     * @param callable   $cb
+     * @param mixed|NULL $arg [optional]
+     * @return bool
+     */
+    public function setTimer ( EventBase $base , callable $cb , mixed $arg = NULL ) : bool
+
+    /**
+     * @param EventBase  $base
+     * @param int        $signum
+     * @param callable   $cb
+     * @param mixed|NULL $arg [optional]
+     * @return Event
+     */
+    public static function signal ( EventBase $base , int $signum , callable $cb , mixed $arg = NULL) : Event
+
+    /**
+     * @param EventBase  $base
+     * @param callable   $cb
+     * @param mixed|NULL $arg [optional]
+     * @return Event
+     */
+    public static function timer ( EventBase $base , callable $cb , mixed $arg = NULL ) : Event
 }
