@@ -278,4 +278,5 @@ final class EventUtil {
      * @link https://www.php.net/manual/en/eventutil.sslrandpoll.php
      */
     public static function sslRandPoll () {}
+    
 }
