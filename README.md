@@ -1,3 +1,5 @@
+English | [中文](./README-CN.md)
+
 # event-ide-helper
 PHP ext-Event IDE Helper
 
