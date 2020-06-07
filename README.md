@@ -8,11 +8,11 @@ PHP ext-Event IDE Helper
 You may add this package to your project using [Composer](https://getcomposer.org):
 
 ```bash
-composer require paulxu-cn/event-ide-helper:dev-master
+composer require paulxu-cn/event-ide-helper
 ```
 
 It's better to install this package on only development systems by adding the `--dev` flag to your Composer commands:
 
 ```bash
-composer require --dev paulxu-cn/event-ide-helper:dev-master
+composer require --dev paulxu-cn/event-ide-helper
 ```
